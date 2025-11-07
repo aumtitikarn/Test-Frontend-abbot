@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Hello Admin",
+    "slug": "hello-admin",
+    "status": "public",
+    "excerpt": "Welcome to the admin blog.",
+    "content": "This is a public blog post.",
+    "createdAt": "2025-11-01T10:00:00.000Z",
+    "updatedAt": "2025-11-01T10:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Draft Tips",
+    "slug": "draft-tips",
+    "status": "unpublic",
+    "excerpt": "Write better drafts with these tips.",
+    "content": "Unpublic note.",
+    "createdAt": "2025-11-02T12:00:00.000Z",
+    "updatedAt": "2025-11-02T12:00:00.000Z"
+  }
+]

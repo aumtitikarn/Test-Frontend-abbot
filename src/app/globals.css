@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ===== Core theme colors ===== */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #3C5791;
+  --color-primary-foreground: #ffffff;
+
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+
+  --font-sans: var(--font-geist-sans, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol");
+  --font-mono: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
 }
 
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+
+/* ===== Base document ===== */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* ===== Helpers (ไม่บังคับ แต่ช่วยให้ปุ่ม/ลิงก์เข้าธีมทันที) ===== */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-white font-medium hover:bg-primary/90 transition;
+}
+.btn-outline-primary {
+  @apply inline-flex items-center justify-center rounded-lg border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-white transition;
+}
+.badge-muted {
+  @apply inline-flex items-center rounded-full bg-gray-100 text-gray-700 px-2 py-0.5 text-xs;
+}
+.badge-success {
+  @apply inline-flex items-center rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs;
 }
